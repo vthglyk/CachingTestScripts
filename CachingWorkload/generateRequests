@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Check for input file on command-line.
+ARGS=1
+E_BADARGS=85
+E_NOFILE=86
+
+if [ $# -ne "$ARGS" ]  # Correct number of arguments passed to script?
+then
+  echo "Usage: `basename $0` filename"
+  exit $E_BADARGS
+fi
+
+if [ ! -f "$1" ]       # Check if file exists.
+then
+  echo "File \"$1\" does not exist."
+  exit $E_NOFILE
+fi
+
+timeOld=0
+echo $timeOld;
+while read timeReq id size; do
+  
+  sleepTime=`echo $timeReq - $timeOld | bc`
+
+  echo "id = " $id "timeReq = "$timeReq "timeOld = "$timeOld "sleepTime "$sleepTime;
+  sleep $sleepTime;
+  
+  x="http://192.168.2.200/"$id".html"
+  ts=$(date +%s%N) ; 
+  #curl $x>/dev/null ; 
+  echo $x ;
+  tt=$((($(date +%s%N) - $ts)/1000000)) ; 
+  echo "Download time for '$x'= $tt ms"; echo;
+
+  timeOld=$timeReq;
+
+done <$1

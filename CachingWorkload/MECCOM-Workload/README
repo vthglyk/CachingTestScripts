@@ -1,0 +1,91 @@
+----------------------------------
+133KB FileSize/Set A-I/II/III/IV/V
+----------------------------------
+Web only workload
+40% one-timers
+LRU Dynamic Stack Model
+1000 LRU Stack Depth 
+0 Popularity-bias
+133 KB file size
+1GB of traffic
+~7200 requests, ~2hours
+~300MB Catalogue Size
+
+Default other parameters
+
+Zipf slope 0.8
+
+----------------------------------
+133KB FileSize/Set B-I/II/III/IV/V
+----------------------------------
+Same as Sets A-*, but:
+
+Zipf slope 0.6
+
+
+----------------------------------
+133KB FileSize/Set C-I/II/III/IV/V
+----------------------------------
+
+Same as Sets A-*, but:
+
+Independent Stack Model 
+(more homogeneous (?), compliant to the IRM assumption)
+
+----------------------------------
+133KB FileSize/Set D-I/II/III/IV/V
+----------------------------------
+
+Same as Sets C-*, but:
+
+- Each item has x2 the requests
+- The rate x2 as well
+
+In total this yields the same experiment duration but with
+double the workload.
+
+----------------------------------
+133KB FileSize/Set E-I/II/III/IV/V
+----------------------------------
+
+Same as Sets C-*, but:
+
+Zipf slope 0.6
+
+
+----------------------------------
+133KB FileSize/Set F-I/II/III/IV/V
+----------------------------------
+
+Same as Sets C-*, but:
+
+Zipf slope 1.0
+
+
+----------------------------------
+133KB FileSize/Set G-I/II/III/IV/V
+----------------------------------
+
+Same as Sets C-*, but:
+
+- Each item has x3 the requests
+- The rate x3 as well
+
+In total this yields the same experiment duration but with
+double the workload.
+
+
+
+----------------------------------
+133KB FileSize/Set H-I/II/III/IV/V
+----------------------------------
+
+Same as Sets C-*, but:
+
+- Each item has x4 the requests
+- The rate x4 as well
+
+In total this yields the same experiment duration but with
+double the workload.
+
+

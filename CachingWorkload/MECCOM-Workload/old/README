@@ -1,0 +1,45 @@
+----------------------------------
+133KB FileSize/Set A-I/II/III/IV/V
+----------------------------------
+Web only workload
+133 KB file size
+1GB of traffic 
+Zipf slope 0.8
+
+Default other parameters
+
+~7200 requests, ~2hours
+~300MB Catalogue Size
+
+----------------------------------
+133KB FileSize/Set B-I/II/III/IV/V
+----------------------------------
+Same as Sets A and B, but:
+
+Zipf slope 0.6
+
+
+======================================================================
+
+----------------------------------
+10KB FileSize/Set A-I/II/III/IV/V
+----------------------------------
+Web only workload
+10 KB file size
+1GB of traffic 
+Zipf slope 0.8
+
+Default other parameters
+
+~7200 requests, ~2hours
+~300MB Catalogue Size
+
+----------------------------------
+10KB FileSize/Set B-I/II/III/IV/V
+----------------------------------
+Same as Sets A and B, but:
+
+Zipf slope 0.6
+
+~7200 requests, ~2hours
+~300MB Catalogue Size
