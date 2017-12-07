@@ -28,4 +28,4 @@ fi
 while read id pop size rest; do
   echo "id = " $id "size = "$size
   dd if=/dev/zero of=/var/www/html/$id.html  bs=$size  count=1
-done <$1
+done <"$1"
