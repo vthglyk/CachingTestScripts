@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Check for input file on command-line.
+ARGS=1
+E_BADARGS=85
+E_NOFILE=86
+
+if [ $# -ne "$ARGS" ]  # Correct number of arguments passed to script?
+then
+  echo "Usage: `basename $0` filename"
+  exit $E_BADARGS
+fi
+
+if [ ! -f "$1" ]       # Check if file exists.
+then
+  echo "File \"$1\" does not exist."
+  exit $E_NOFILE
+fi
+
+
+#while read line; do
+#    for word in $line; do
+#        echo "word = '$word'"
+#    done
+#done
+
+
+while read id pop size rest; do
+  echo "id = " $id "size = "$size
+  dd if=/dev/zero of=/var/www/html/$id.html  bs=$size  count=1
+done <$1
