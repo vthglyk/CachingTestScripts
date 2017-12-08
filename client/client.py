@@ -78,6 +78,8 @@ def query_prometheus(prometheus_query_interval, prometheus_url, prometheus_job):
 
 def hook_factory(*factory_args, **factory_kwargs):
     def response_hook(res, *request_args, **request_kwargs):
+        # subtract always the start_time to get the time relative to the start of the program
+        latency = time.time() - start_time
         size = len(res.content)
         dtime = time.time() - start_time
         id = factory_kwargs['request_id']
@@ -86,6 +88,7 @@ def hook_factory(*factory_args, **factory_kwargs):
         print file, id, size
 
         results[id]['end'] = dtime
+        results[id]['latency'] = latency
         results[id]['download_time'] = str((results[id]['end'] - results[id]['start']) * 1000) + ' ms'
         results[id]['status_code'] = res.status_code
         results[id]['X-Cache'] = res.headers['X-Cache']
