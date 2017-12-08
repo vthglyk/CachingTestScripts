@@ -89,6 +89,7 @@ def hook_factory(*factory_args, **factory_kwargs):
 
         results[id]['end'] = dtime
         results[id]['latency'] = latency
+        results[id]['size'] = size
         results[id]['download_time'] = str((results[id]['end'] - results[id]['start']) * 1000) + ' ms'
         results[id]['status_code'] = res.status_code
         results[id]['X-Cache'] = res.headers['X-Cache']
