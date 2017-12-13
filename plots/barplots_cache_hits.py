@@ -2,15 +2,13 @@ import json
 import argparse
 import os
 import sys
-import math
 import matplotlib
 import matplotlib.pyplot as plt 
 import seaborn
 import numpy as np
-import subprocess
-import scipy as sp
 import math
 from scipy import stats
+
 
 def mean_confidence_interval(data, confidence=0.95):
   a = 1.0*np.array(data)
@@ -18,6 +16,7 @@ def mean_confidence_interval(data, confidence=0.95):
   std=math.sqrt(var) 
   h = stats.norm.interval(0.95,loc=mean,scale=std/math.sqrt(n)) 
   return [mean, h[0], h[1]]
+
 
 def main() :
   matplotlib.rcParams['text.usetex'] = True
@@ -185,7 +184,7 @@ def main() :
   fig = plt.gcf()
   fig.tight_layout()
   fig.set_size_inches(10,7)
-  plt.savefig("MECCOM_plots/" + args.filename + base_filename + ".eps")
+  #plt.savefig("MECCOM_plots/" + args.filename + base_filename + ".eps")
 
   plt.show()
 

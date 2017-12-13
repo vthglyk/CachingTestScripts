@@ -6,7 +6,6 @@ import time
 import os
 import argparse
 import json
-from pprint import pprint
 from gevent.pool import Pool
 import subprocess
 
@@ -19,6 +18,7 @@ prometheus_query = '''{__name__=~"^cache.*"} or node_cpu or {__name__=~"^node_me
                       or {__name__=~"^node_disk.*"} or {__name__=~"^node_network.*"}'''
 delimiter = '/'  # '/' for testing, '?' for debugging
 finished = False
+headers = {'Accept-Encoding' : 'bytes'}
 
 
 def query_prometheus(prometheus_query_interval, prometheus_url, prometheus_job):
@@ -193,7 +193,8 @@ def main():
                 session = requests.Session()
                 r = grequests.get(args.content_server_base_url + delimiter + file_id + '.html',
                                   hooks={'response': [hook_factory(request_id=request_id, session=session)]},
-                                  session=session)
+                                  session=session,
+                                  headers=headers)
                 results[request_id] = dict()
                 results[request_id]['file'] = file_id
                 sleep_time = float(line[0]) - previous_file_start_time
