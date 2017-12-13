@@ -31,10 +31,10 @@ def main() :
                       help='was the peering active (1 for True and 0 for false')
   parser.add_argument('--filename', '-f', 
                       help='filename')
-  parser.add_argument('--ylim', '-y', default=1000, type=int,
-                      help='y axis limit (Default: 1000)')
-  parser.add_argument('--ytick', '-yt', default=100, type=int,
-                      help='y axis tick (Default: 100)')  
+  parser.add_argument('--ylim', '-y', default=100, type=int,
+                      help='y axis limit (Default: 100)')
+  parser.add_argument('--ytick', '-yt', default=10, type=int,
+                      help='y axis tick (Default: 10)')
   args = parser.parse_args()
 
   if len(args.input) != len(args.labels):

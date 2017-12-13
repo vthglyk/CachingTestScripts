@@ -57,6 +57,7 @@ def main() :
       lines = f.readlines()
       if "All the requests were served correctly" not in lines[1]:
         print "Not all the requests were served correctly"
+        json_string = lines[1]
       else:
         json_string = lines[1].replace("All the requests were served correctly", '')
 

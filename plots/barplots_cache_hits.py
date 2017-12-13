@@ -184,7 +184,7 @@ def main() :
   fig = plt.gcf()
   fig.tight_layout()
   fig.set_size_inches(10,7)
-  #plt.savefig("MECCOM_plots/" + args.filename + base_filename + ".eps")
+  plt.savefig("MECCOM_plots/" + args.filename + base_filename + ".eps")
 
   plt.show()
 
